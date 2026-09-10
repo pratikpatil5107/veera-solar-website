@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <div className="border-x border-navy-900/10">
       <Navbar onQuote={() => setQuoteOpen(true)} />
       <main>
         <Hero onQuote={() => setQuoteOpen(true)} />
@@ -37,6 +38,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      </div>
       <FloatingContact onQuote={() => setQuoteOpen(true)} />
       <QuoteModal open={quoteOpen} onClose={() => setQuoteOpen(false)} />
     </div>

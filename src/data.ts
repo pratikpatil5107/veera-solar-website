@@ -159,6 +159,8 @@ export const WHY_VEERA = [
   { icon: 'Users', title: 'Experienced Team', desc: 'A decade-plus of field experience across residential, commercial, industrial and ground-mounted solar projects.' },
   { icon: 'Handshake', title: 'Trusted Technology Partners', desc: 'We work with leading module, inverter, cable and structure brands to ensure reliability and long-term support.' },
   { icon: 'LineChart', title: 'Performance Focused', desc: 'Systems are engineered for real-world yield \u2014 optimised for generation, not just installed capacity.' },
+  { icon: 'ShieldCheck', title: 'AMC & O&M', desc: 'Annual Maintenance Contracts and round-the-clock operations support keep every system performing at peak, with scheduled inspections, cleaning and rapid response.' },
+  { icon: 'Factory', title: 'Manufacturing Facilities', desc: 'In-house manufacturing of mounting structures and BoS components ensures quality control, faster lead times and engineering tailored to each project.' },
 ];
 
 export const FOUNDER = {

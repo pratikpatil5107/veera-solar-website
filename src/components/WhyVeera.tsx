@@ -1,4 +1,4 @@
-import { Cog, Layers, Award, Users, Handshake, LineChart } from 'lucide-react';
+import { Cog, Layers, Award, Users, Handshake, LineChart, ShieldCheck, Factory } from 'lucide-react';
 import { WHY_VEERA } from '@/data';
 
 const ICONS: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
@@ -8,6 +8,8 @@ const ICONS: Record<string, React.ComponentType<{ className?: string; strokeWidt
   Users,
   Handshake,
   LineChart,
+  ShieldCheck,
+  Factory,
 };
 
 export default function WhyVeera() {
@@ -27,7 +29,7 @@ export default function WhyVeera() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {WHY_VEERA.map((item, i) => {
             const Icon = ICONS[item.icon] ?? Cog;
             return (
