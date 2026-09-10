@@ -26,9 +26,9 @@ export default function Navbar({ onQuote }: NavbarProps) {
           : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <nav className="container-x flex h-18 items-center justify-between py-3.5">
+      <nav className="container-x flex h-20 items-center justify-between py-3">
         <a href="#home" className="group flex items-center gap-3" aria-label="Veera Solar Energy home">
-          <span className="flex h-11 w-44 items-center overflow-hidden rounded-xl bg-navy-950 px-2 shadow-soft transition-transform duration-300 group-hover:scale-[1.02]">
+          <span className="flex h-16 w-60 items-center overflow-hidden rounded-xl bg-navy-950 px-2.5 shadow-soft transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-gold">
             <img
               src="/images/Veera_Solar_Energy_LOGO_edit_-_Copy.jpg.jpeg"
               alt="Veera Solar Energy"

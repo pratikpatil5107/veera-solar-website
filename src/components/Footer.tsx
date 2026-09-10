@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <div className="flex h-12 w-48 items-center overflow-hidden rounded-xl bg-white px-2 shadow-soft">
+            <div className="flex h-16 w-60 items-center overflow-hidden rounded-xl bg-white px-2.5 shadow-soft transition-transform duration-300 hover:scale-[1.02]">
               <img
                 src="/images/Veera_Solar_Energy_LOGO_edit_-_Copy.jpg.jpeg"
                 alt="Veera Solar Energy"
