@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, Sun } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NAV_LINKS, COMPANY } from '@/data';
 import { useScrolled } from '@/hooks';
 
@@ -28,16 +28,12 @@ export default function Navbar({ onQuote }: NavbarProps) {
     >
       <nav className="container-x flex h-18 items-center justify-between py-3.5">
         <a href="#home" className="group flex items-center gap-3" aria-label="Veera Solar Energy home">
-          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 shadow-soft transition-transform duration-300 group-hover:scale-105">
-            <Sun className="h-6 w-6 text-gold-400" strokeWidth={2.2} />
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className={`font-display text-[1.05rem] font-extrabold tracking-tight transition-colors duration-300 ${scrolled ? 'text-navy-900' : 'text-white'}`}>
-              VEERA SOLAR
-            </span>
-            <span className={`text-[0.62rem] font-semibold uppercase tracking-[0.28em] transition-colors duration-300 ${scrolled ? 'text-gold-600' : 'text-gold-400'}`}>
-              Energy
-            </span>
+          <span className="flex h-11 w-44 items-center overflow-hidden rounded-xl bg-navy-950 px-2 shadow-soft transition-transform duration-300 group-hover:scale-[1.02]">
+            <img
+              src="/images/Veera_Solar_Energy_LOGO_edit_-_Copy.jpg.jpeg"
+              alt="Veera Solar Energy"
+              className="h-full w-full object-contain"
+            />
           </span>
         </a>
 

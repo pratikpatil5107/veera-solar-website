@@ -171,7 +171,7 @@ export const FOUNDER = {
     'Veera Solar Energy was founded with a clear belief \u2014 that solar should be engineered, not just installed. With over a decade of hands-on experience across rooftop and ground-mounted projects, our founder has built a team that treats every installation as an engineering project first.',
     'From site assessment and structural design to procurement, commissioning and long-term support, the focus has always been on quality execution and honest, accountable delivery for every customer.',
   ],
-  image: '/images/Screenshot_2026-08-30_032435.png',
+  image: '/images/WhatsApp_Image_2026-09-11_at_1.56.35_AM.jpeg',
 };
 
 export const HERO_IMAGE = 'https://images.pexels.com/photos/8783541/pexels-photo-8783541.jpeg?auto=compress&cs=tinysrgb&w=1600';

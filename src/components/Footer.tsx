@@ -1,4 +1,4 @@
-import { Sun, Phone, Mail, MapPin, ArrowUp, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { COMPANY, NAV_LINKS, SOLUTIONS } from '@/data';
 
 export default function Footer() {
@@ -11,14 +11,12 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-800 shadow-soft">
-                <Sun className="h-6 w-6 text-gold-400" strokeWidth={2.2} />
-              </span>
-              <span className="flex flex-col leading-none">
-                <span className="font-display text-lg font-extrabold text-white">VEERA SOLAR</span>
-                <span className="text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-gold-500">Energy</span>
-              </span>
+            <div className="flex h-12 w-48 items-center overflow-hidden rounded-xl bg-white px-2 shadow-soft">
+              <img
+                src="/images/Veera_Solar_Energy_LOGO_edit_-_Copy.jpg.jpeg"
+                alt="Veera Solar Energy"
+                className="h-full w-full object-contain"
+              />
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-navy-300">
               Veera Solar Energy is a solar EPC company delivering engineering, procurement,
