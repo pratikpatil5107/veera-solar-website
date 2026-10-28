@@ -5,6 +5,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'About', href: '#about' },
   { label: 'Solutions', href: '#solutions' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Manufacturers', href: '#manufacturers' },
   { label: 'Partners', href: '#partners' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -18,13 +19,13 @@ export const COMPANY = {
   whatsappHref: 'https://wa.me/916363405699',
   email: 'info@veerasolar.com',
   emailHref: 'mailto:info@veerasolar.com',
-  addressLine1: 'Prince Inn, Ramanna Garden',
-  addressLine2: 'Bagaluru Main Road, Kattigenahalli',
-  addressLine3: 'Bangalore, Karnataka 560063',
+  addressLine1: 'Plot No. 183/4, Kattigenahalli Gate',
+  addressLine2: 'Ramanna Garden, Bagalur Main Road, IAF Post',
+  addressLine3: 'Opposite IOC, Yelahanka, Bengaluru, Karnataka 560063',
   addressLine4: 'India',
-  mapsQuery: 'Veera Solar Energy, Prince Inn, Ramanna Garden, Bagaluru Main Road, Kattigenahalli, Bangalore, Karnataka 560063',
-  mapsHref: 'https://www.google.com/maps/search/?api=1&query=Veera+Solar+Energy%2C+Prince+Inn%2C+Ramanna+Garden%2C+Bagaluru+Main+Road%2C+Kattigenahalli%2C+Bangalore%2C+Karnataka+560063',
-  mapsEmbed: 'https://www.google.com/maps?q=Veera+Solar+Energy%2C+Prince+Inn%2C+Ramanna+Garden%2C+Bagaluru+Main+Road%2C+Kattigenahalli%2C+Bangalore%2C+Karnataka+560063&output=embed',
+  mapsQuery: 'Veera Solar Energy Pvt. Ltd., Plot No. 183/4, Kattigenahalli Gate, Ramanna Garden, Bagalur Main Road, IAF Post, opposite IOC, Yelahanka, Bengaluru, Karnataka 560063',
+  mapsHref: 'https://www.google.com/maps/search/?api=1&query=Veera+Solar+Energy+Pvt.+Ltd.%2C+Plot+No.+183%2F4%2C+Kattigenahalli+Gate%2C+Ramanna+Garden%2C+Bagalur+Main+Road%2C+Yelahanka%2C+Bengaluru%2C+Karnataka+560063',
+  mapsEmbed: 'https://www.google.com/maps?q=Veera+Solar+Energy+Pvt.+Ltd.%2C+Plot+No.+183%2F4%2C+Kattigenahalli+Gate%2C+Ramanna+Garden%2C+Bagalur+Main+Road%2C+Yelahanka%2C+Bengaluru%2C+Karnataka+560063&output=embed',
   hours: 'Mon \u2013 Sat: 9:30 AM \u2013 6:30 PM',
 };
 
@@ -92,41 +93,42 @@ export type Project = {
   location: string;
   capacity: string;
   desc: string;
-  image: string;
+  image?: string;
+  pending?: boolean;
 };
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Industrial Rooftop Installation',
-    category: 'Commercial & Industrial',
-    location: 'Karnataka',
-    capacity: 'Rooftop Solar',
-    desc: 'A large industrial rooftop system engineered to offset heavy daytime load and deliver long-term energy savings.',
-    image: 'https://images.pexels.com/photos/8783541/pexels-photo-8783541.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    title: '5 kW project profile',
+    category: 'Project profile to be completed',
+    location: 'Location to be confirmed',
+    capacity: '5 kW',
+    desc: 'A dedicated place for the completed 5 kW project. Customer, location, photograph, date and commercial model will be added after approval.',
+    pending: true,
   },
   {
-    title: 'Ground-Mounted Solar Farm',
-    category: 'Ground Mounted',
-    location: 'India',
-    capacity: 'Utility Scale',
-    desc: 'A ground-mounted solar installation with engineered foundations and mounting structures for sustained generation.',
-    image: 'https://images.pexels.com/photos/15751134/pexels-photo-15751134.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    title: 'Commercial rooftop project',
+    category: 'Rooftop solar',
+    location: 'Location to be confirmed',
+    capacity: 'Capacity to be confirmed',
+    desc: 'Add the approved project photograph, customer or project name, installed capacity and verified description here.',
+    pending: true,
   },
   {
-    title: 'Commercial Rooftop Deployment',
-    category: 'Commercial',
-    location: 'Karnataka',
-    capacity: 'Rooftop Solar',
-    desc: 'A commercial rooftop deployment designed to maximise generation while keeping the roof structure and operations intact.',
-    image: 'https://images.pexels.com/photos/29923348/pexels-photo-29923348.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    title: 'Ground-mounted project',
+    category: 'Ground-mounted solar',
+    location: 'Location to be confirmed',
+    capacity: 'Capacity to be confirmed',
+    desc: 'Add the approved project photograph, installed capacity and verified project information here.',
+    pending: true,
   },
   {
-    title: 'Residential Rooftop System',
-    category: 'Residential',
-    location: 'India',
-    capacity: 'Rooftop Solar',
-    desc: 'A custom residential rooftop system sized for household consumption with net-metering and clean aesthetics.',
-    image: 'https://images.pexels.com/photos/12243093/pexels-photo-12243093.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    title: 'OPEX / RESCO project',
+    category: 'Commercial solar',
+    location: 'Location to be confirmed',
+    capacity: 'Capacity to be confirmed',
+    desc: 'Add an OPEX or RESCO example only after the project details and public presentation are approved.',
+    pending: true,
   },
 ];
 
@@ -139,17 +141,18 @@ export const PARTNERS = [
   { name: 'SolarEdge', category: 'Inverters' },
   { name: 'Polycab', category: 'Cables' },
   { name: 'Havells', category: 'Cables' },
-  { name: 'Gautam Solar', category: 'Structures' },
-  { name: 'Patanjali', category: 'Structures' },
+  { name: 'Veera Solar', category: 'Structures' },
 ];
 
-export const CLIENTS = [
-  'Client One',
-  'Client Two',
-  'Client Three',
-  'Client Four',
-  'Client Five',
-  'Client Six',
+export type Client = { name: string; detail: string; leadership?: boolean };
+
+export const CLIENTS: Client[] = [
+  { name: 'Mr. Irayya B. H.', detail: 'Co-Founder & Managing Director, Veera Solar Energy Pvt. Ltd.', leadership: true },
+  { name: 'Client Two', detail: 'Approved profile to be added' },
+  { name: 'Client Three', detail: 'Approved profile to be added' },
+  { name: 'Client Four', detail: 'Approved profile to be added' },
+  { name: 'Client Five', detail: 'Approved profile to be added' },
+  { name: 'Client Six', detail: 'Approved profile to be added' },
 ];
 
 export const WHY_VEERA = [
@@ -161,19 +164,51 @@ export const WHY_VEERA = [
   { icon: 'LineChart', title: 'Performance Focused', desc: 'Systems are engineered for real-world yield \u2014 optimised for generation, not just installed capacity.' },
   { icon: 'ShieldCheck', title: 'AMC & O&M', desc: 'Annual Maintenance Contracts and round-the-clock operations support keep every system performing at peak, with scheduled inspections, cleaning and rapid response.' },
   { icon: 'Factory', title: 'Manufacturing Facilities', desc: 'In-house manufacturing of mounting structures and BoS components ensures quality control, faster lead times and engineering tailored to each project.' },
+  { icon: 'WalletCards', title: 'OPEX / RESCO Models', desc: 'Depending on the agreement, a provider may finance, install, operate or maintain a solar system while the customer pays under agreed commercial terms. Investment, tariffs, savings and responsibilities vary by contract.' },
 ];
 
 export const FOUNDER = {
-  name: 'Irayya BH',
-  designation: 'Founder & Managing Director',
-  intro: 'Built by engineers. Driven by execution.',
+  name: 'Mr. Irayya B. H.',
+  designation: 'Co-Founder & Managing Director',
+  intro: 'Engineering leadership grounded in execution.',
   bio: [
     'Veera Solar Energy was founded with a clear belief \u2014 that solar should be engineered, not just installed. With over a decade of hands-on experience across rooftop and ground-mounted projects, our founder has built a team that treats every installation as an engineering project first.',
     'From site assessment and structural design to procurement, commissioning and long-term support, the focus has always been on quality execution and honest, accountable delivery for every customer.',
   ],
   image: '/images/WhatsApp_Image_2026-09-11_at_1.56.35_AM.jpeg',
+  expertise: [
+    'Solar photovoltaic systems',
+    'Ground-mounted and rooftop solar design',
+    'BESCOM liaisoning',
+    'Solar power plant execution',
+    'Earth-moving equipment design and fabrication',
+    'Engineering leadership and project execution',
+  ],
 };
 
 export const HERO_IMAGE = 'https://images.pexels.com/photos/8783541/pexels-photo-8783541.jpeg?auto=compress&cs=tinysrgb&w=1600';
 export const ABOUT_IMAGE = 'https://images.pexels.com/photos/11645008/pexels-photo-11645008.jpeg?auto=compress&cs=tinysrgb&w=1200';
 export const CTA_IMAGE = 'https://images.pexels.com/photos/15751131/pexels-photo-15751131.jpeg?auto=compress&cs=tinysrgb&w=1600';
+
+export const MANUFACTURER_ITEMS = [
+  { title: 'Solar Modules', detail: 'Product photography and approved module details can be added here.', icon: 'PanelsTopLeft' },
+  { title: 'Inverters & Controls', detail: 'Showcase approved inverter and control equipment details here.', icon: 'Activity' },
+  { title: 'Structures & Balance of System', detail: 'Add genuine structure and balance-of-system photographs here.', icon: 'Building2' },
+];
+
+export const ON_GRID_STAGES = [
+  { title: 'Sunlight', short: 'Solar energy starts with sunlight.', detail: 'Sunlight reaches the system area and provides the energy source for photovoltaic generation.', node: 'sun' },
+  { title: 'Solar Panels', short: 'Panels convert sunlight into DC electricity.', detail: 'Photovoltaic modules absorb sunlight and produce direct-current electricity.', node: 'panels' },
+  { title: 'Grid-Tied Inverter', short: 'The inverter converts DC into usable AC.', detail: 'A grid-tied inverter converts the panels’ DC electricity into AC electricity for compatible building systems.', node: 'inverter' },
+  { title: 'Powering the Building', short: 'Solar power supplies active electrical loads.', detail: 'While the system is generating, solar electricity can supply compatible appliances, equipment and building loads.', node: 'building' },
+  { title: 'Grid Connection', short: 'The grid balances supply when configured.', detail: 'The grid may supply additional electricity when solar generation is insufficient, and surplus may be exported where approvals and applicable rules allow. Standard grid-tied systems generally shut down during an outage unless backup capability is specifically designed.', node: 'grid' },
+];
+
+export const HYBRID_STAGES = [
+  { title: 'Sunlight', short: 'Solar energy begins with the sun.', detail: 'Sunlight reaches the photovoltaic array and starts the energy journey.', node: 'sun' },
+  { title: 'Solar Panels Generate Electricity', short: 'Panels produce DC electricity.', detail: 'Photovoltaic modules convert available sunlight into direct-current electricity.', node: 'panels' },
+  { title: 'Hybrid Inverter Manages Power', short: 'Controls coordinate energy conversion and distribution.', detail: 'The hybrid inverter and associated controls manage conversion and decide where available energy can flow.', node: 'inverter' },
+  { title: 'Battery Storage', short: 'Energy can be stored for later use.', detail: 'When charging is appropriate, energy can flow into the battery, subject to capacity, charge level, system configuration and operating settings.', node: 'battery' },
+  { title: 'Powering the Building', short: 'Solar and stored energy can supply loads.', detail: 'Solar power and, where configured, stored battery energy may supply selected building loads.', node: 'building' },
+  { title: 'Grid Support and Backup', short: 'The grid can supplement the system when required.', detail: 'Where suitable backup hardware and configuration exist, stored energy and/or available solar may support designated loads during an outage. Not every hybrid system provides backup, and priorities vary by equipment and settings.', node: 'grid' },
+];

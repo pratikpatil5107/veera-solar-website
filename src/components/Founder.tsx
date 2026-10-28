@@ -1,4 +1,4 @@
-import { Quote } from 'lucide-react';
+import { Quote, Check } from 'lucide-react';
 import { FOUNDER } from '@/data';
 
 export default function Founder() {
@@ -13,7 +13,7 @@ export default function Founder() {
                 <img
                   src={FOUNDER.image}
                   alt="Founder and leadership of Veera Solar Energy"
-                  className="aspect-[4/5] w-full bg-navy-50 object-contain object-center transition-transform duration-700 hover:scale-[1.02]"
+                  className="aspect-[4/5] w-full bg-navy-50 object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                   loading="lazy"
                 />
               </div>
@@ -45,6 +45,15 @@ export default function Founder() {
                 <p className="font-display text-lg font-bold text-navy-900">{FOUNDER.name}</p>
                 <p className="text-sm font-medium text-navy-500">{FOUNDER.designation}</p>
               </div>
+            </div>
+
+            <div className="reveal reveal-delay-4 mt-6 grid gap-3 sm:grid-cols-2">
+              {FOUNDER.expertise.map((item) => (
+                <div key={item} className="flex items-start gap-2 text-sm font-medium text-navy-700">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold-600" />
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </div>

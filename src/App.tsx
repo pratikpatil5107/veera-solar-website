@@ -6,6 +6,8 @@ import About from '@/components/About';
 import Solutions from '@/components/Solutions';
 import Process from '@/components/Process';
 import Projects from '@/components/Projects';
+import Manufacturers from '@/components/Manufacturers';
+import SolarExperience from '@/components/SolarExperience';
 import Founder from '@/components/Founder';
 import Partners from '@/components/Partners';
 import Clients from '@/components/Clients';
@@ -31,6 +33,9 @@ function App() {
         <Solutions />
         <Process />
         <Projects />
+        <Manufacturers onQuote={() => setQuoteOpen(true)} />
+        <SolarExperience type="on-grid" onQuote={() => setQuoteOpen(true)} />
+        <SolarExperience type="hybrid" onQuote={() => setQuoteOpen(true)} />
         <Founder />
         <Partners />
         <Clients />

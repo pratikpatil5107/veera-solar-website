@@ -1,4 +1,4 @@
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, UserRound } from 'lucide-react';
 import { CLIENTS } from '@/data';
 
 export default function Clients() {
@@ -17,14 +17,16 @@ export default function Clients() {
         </div>
 
         <div className="reveal reveal-delay-3 mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {CLIENTS.map((c) => (
+          {CLIENTS.map((client) => (
             <div
-              key={c}
-              className="group flex h-24 items-center justify-center rounded-2xl border border-navy-100 bg-navy-50/40 px-4 grayscale transition-all duration-400 hover:grayscale-0 hover:border-gold-200 hover:bg-white hover:shadow-soft"
+              key={client.name}
+              className={`group flex min-h-28 flex-col items-center justify-center rounded-2xl border px-4 text-center transition-all duration-400 hover:-translate-y-1 hover:bg-white hover:shadow-soft ${client.leadership ? 'border-gold-300 bg-gold-50/70' : 'border-navy-100 bg-navy-50/40'}`}
             >
-              <span className="font-display text-base font-bold tracking-tight text-navy-700 transition-colors duration-300 group-hover:text-navy-900">
-                {c}
+              {client.leadership && <UserRound className="mb-2 h-5 w-5 text-gold-600" />}
+              <span className="font-display text-sm font-bold tracking-tight text-navy-800 transition-colors duration-300 group-hover:text-navy-900">
+                {client.name}
               </span>
+              <span className="mt-1 text-[0.68rem] leading-tight text-navy-500">{client.detail}</span>
             </div>
           ))}
         </div>

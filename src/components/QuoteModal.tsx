@@ -32,6 +32,10 @@ export default function QuoteModal({ open, onClose }: Props) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
+    const capacity = Number(data.get('capacity'));
+    const capacityUnit = String(data.get('capacity_unit') ?? 'kW');
+    const capacityMw = capacityUnit === 'MW' ? capacity : capacity / 1000;
+    const message = String(data.get('message') ?? '').trim();
     const payload = {
       name: String(data.get('name') ?? '').trim(),
       company: String(data.get('company') ?? '').trim() || null,
@@ -39,13 +43,13 @@ export default function QuoteModal({ open, onClose }: Props) {
       email: String(data.get('email') ?? '').trim(),
       location: String(data.get('location') ?? '').trim() || null,
       project_type: String(data.get('project_type') ?? '').trim() || null,
-      message: String(data.get('message') ?? '').trim() || null,
+      message: `Desired solar capacity: ${capacity} ${capacityUnit}${message ? `\n\n${message}` : ''}`,
       source: 'quote-modal',
     };
 
-    if (!payload.name || !payload.email) {
+    if (!payload.name || !payload.phone || !payload.email || !Number.isFinite(capacity) || capacity <= 0 || capacityMw > 100) {
       setStatus('error');
-      setErrorMsg('Please provide at least your name and email.');
+      setErrorMsg('Please provide your name, phone, email and a valid capacity up to 100 MW.');
       return;
     }
 
@@ -97,9 +101,17 @@ export default function QuoteModal({ open, onClose }: Props) {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <Field label="Name *" name="name" required />
             <Field label="Company" name="company" />
-            <Field label="Phone" name="phone" type="tel" />
+            <Field label="Phone *" name="phone" type="tel" required />
             <Field label="Email *" name="email" type="email" required />
             <Field label="Location" name="location" />
+            <Field label="Desired capacity *" name="capacity" type="number" required />
+            <div>
+              <label htmlFor="qm_capacity_unit" className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-navy-600">Capacity unit *</label>
+              <select id="qm_capacity_unit" name="capacity_unit" defaultValue="kW" className="h-11 w-full rounded-xl border border-navy-200 bg-white px-3 text-sm font-medium text-navy-800 outline-none transition-colors focus:border-gold-400 focus:ring-2 focus:ring-gold-200">
+                <option value="kW">kW</option>
+                <option value="MW">MW</option>
+              </select>
+            </div>
             <div>
               <label htmlFor="qm_project_type" className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-navy-600">
                 Project Type

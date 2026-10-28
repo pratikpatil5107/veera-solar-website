@@ -1,4 +1,4 @@
-import { ArrowUpRight, MapPin, Zap } from 'lucide-react';
+import { ArrowUpRight, ImagePlus, MapPin, Zap } from 'lucide-react';
 import { PROJECTS } from '@/data';
 
 export default function Projects() {
@@ -33,18 +33,26 @@ export default function Projects() {
               key={p.title}
               className={`reveal reveal-delay-${(i % 2) + 1} group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5`}
             >
-              <div className="relative aspect-[16/11] overflow-hidden">
-                <img
-                  src={p.image}
-                  alt={`${p.title} \u2014 ${p.category} solar project by Veera Solar Energy`}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
+              <div className="relative aspect-[16/11] overflow-hidden bg-[radial-gradient(circle_at_70%_20%,rgba(194,147,42,0.24),transparent_35%),linear-gradient(135deg,#102653,#07122e)]">
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={`${p.title} — ${p.category} solar project by Veera Solar Energy`}
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="flex h-full flex-col items-center justify-center gap-3 text-center text-navy-300">
+                    <ImagePlus className="h-10 w-10 text-gold-400" strokeWidth={1.4} />
+                    <span className="text-xs font-bold uppercase tracking-[0.16em]">Approved project photo to be added</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent" />
                 <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full border border-white/20 bg-navy-950/50 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-gold-300 backdrop-blur-md">
                   <Zap className="h-3.5 w-3.5" />
                   {p.category}
                 </div>
+                {p.pending && <div className="absolute right-4 top-4 rounded-full border border-gold-300/30 bg-navy-950/60 px-3 py-1.5 text-[0.65rem] font-bold uppercase tracking-wide text-gold-200 backdrop-blur-md">Details pending approval</div>}
                 <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-navy-100">
                   <span className="flex items-center gap-1.5">
                     <MapPin className="h-4 w-4 text-gold-400" />
