@@ -190,6 +190,9 @@ export const HERO_IMAGE = 'https://images.pexels.com/photos/8783541/pexels-photo
 export const ABOUT_IMAGE = 'https://images.pexels.com/photos/11645008/pexels-photo-11645008.jpeg?auto=compress&cs=tinysrgb&w=1200';
 export const CTA_IMAGE = 'https://images.pexels.com/photos/15751131/pexels-photo-15751131.jpeg?auto=compress&cs=tinysrgb&w=1600';
 
+export const ON_GRID_PHOTO: string | undefined = undefined; // set to '/images/on-grid-system.jpg' when supplied
+export const HYBRID_PHOTO: string | undefined = undefined; // set to '/images/hybrid-system.jpg' when supplied
+
 export const MANUFACTURER_ITEMS = [
   { title: 'Solar Modules', detail: 'Product photography and approved module details can be added here.', icon: 'PanelsTopLeft' },
   { title: 'Inverters & Controls', detail: 'Showcase approved inverter and control equipment details here.', icon: 'Activity' },

@@ -1,0 +1,86 @@
+/* Solar experience animations — premium navy-and-gold energy flow */
+
+@keyframes solar-sun-pulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+.solar-sun-core { animation: solar-sun-pulse 3.5s ease-in-out infinite; transform-origin: center; }
+
+@keyframes solar-sun-rays {
+  0% { opacity: 0.2; stroke-dashoffset: 0; }
+  50% { opacity: 0.9; stroke-dashoffset: -12; }
+  100% { opacity: 0.2; stroke-dashoffset: -24; }
+}
+.solar-sun-ray { animation: solar-sun-rays 2.6s ease-in-out infinite; }
+
+@keyframes solar-panel-glow {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.75; }
+}
+.solar-panel-active { animation: solar-panel-glow 2.2s ease-in-out infinite; }
+
+@keyframes energy-flow-dash {
+  to { stroke-dashoffset: -40; }
+}
+.flow-active { animation: energy-flow-dash 1.4s linear infinite; }
+.flow-active-reverse { animation: energy-flow-dash 1.4s linear infinite reverse; }
+
+@keyframes energy-particle-move {
+  0% { offset-distance: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes component-glow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(194,147,42,0.3)); }
+  50% { filter: drop-shadow(0 0 8px rgba(194,147,42,0.7)); }
+}
+.component-active { animation: component-glow 2s ease-in-out infinite; }
+
+@keyframes window-light {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.95; }
+}
+.window-lit { animation: window-light 1.8s ease-in-out infinite; }
+
+@keyframes battery-charge-fill {
+  from { transform: scaleY(var(--charge-from, 0)); }
+  to { transform: scaleY(var(--charge-to, 0.5)); }
+}
+.battery-charging { animation: battery-charge-fill 3s ease-out forwards; transform-origin: bottom; }
+
+@keyframes battery-discharge {
+  from { transform: scaleY(var(--charge-from, 0.8)); }
+  to { transform: scaleY(var(--charge-to, 0.2)); }
+}
+.battery-discharging { animation: battery-discharge 3s ease-in forwards; transform-origin: bottom; }
+
+@keyframes grid-line-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+.grid-line-active { animation: grid-line-pulse 2s ease-in-out infinite; }
+
+@keyframes stage-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.stage-fade { animation: stage-fade-in 0.5s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .solar-sun-core,
+  .solar-sun-ray,
+  .solar-panel-active,
+  .flow-active,
+  .flow-active-reverse,
+  .component-active,
+  .window-lit,
+  .battery-charging,
+  .battery-discharging,
+  .grid-line-active {
+    animation: none !important;
+  }
+  .flow-active, .flow-active-reverse { stroke-dashoffset: 0; opacity: 0.6; }
+  .stage-fade { animation: none !important; opacity: 1; }
+}
