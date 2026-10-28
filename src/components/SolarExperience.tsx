@@ -41,12 +41,6 @@ export default function SolarExperience({ type, onQuote }: Props) {
     <section className={`section-pad relative overflow-hidden ${isHybrid ? 'bg-navy-50/70' : 'bg-navy-950'}`}>
       <div className={`pointer-events-none absolute inset-0 ${isHybrid ? 'bg-grid opacity-30' : 'bg-grid-dark opacity-40'}`} />
       <div className="container-x relative">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className={`eyebrow reveal justify-center ${isHybrid ? '' : 'text-gold-300'}`}>{isHybrid ? 'Hybrid systems' : 'On-grid systems'}</span>
-          <h2 className={`reveal reveal-delay-1 heading-lg mt-4 ${isHybrid ? 'text-navy-900' : 'text-white'}`}>{title}</h2>
-          <p className={`reveal reveal-delay-2 mt-4 text-lg leading-relaxed ${isHybrid ? 'text-navy-600' : 'text-navy-200'}`}>{intro}</p>
-        </div>
-
         {/* Photograph slot */}
         <div className={`reveal reveal-delay-3 mt-10 overflow-hidden rounded-3xl border ${isHybrid ? 'border-navy-200' : 'border-white/10'}`}>
           {photo ? (
@@ -58,6 +52,12 @@ export default function SolarExperience({ type, onQuote }: Props) {
               <span className="max-w-md text-xs text-navy-300">Add the supplied image to <code className="rounded bg-white/10 px-1.5 py-0.5 text-gold-300">{isHybrid ? 'HYBRID_PHOTO' : 'ON_GRID_PHOTO'}</code> in the data file to display it.</span>
             </div>
           )}
+        </div>
+
+        <div className="mx-auto mt-10 max-w-3xl text-center">
+          <span className={`eyebrow reveal justify-center ${isHybrid ? '' : 'text-gold-300'}`}>{isHybrid ? 'Hybrid systems' : 'On-grid systems'}</span>
+          <h2 className={`reveal reveal-delay-1 heading-lg mt-4 ${isHybrid ? 'text-navy-900' : 'text-white'}`}>{title}</h2>
+          <p className={`reveal reveal-delay-2 mt-4 text-lg leading-relaxed ${isHybrid ? 'text-navy-600' : 'text-navy-200'}`}>{intro}</p>
         </div>
 
         {/* Animated scene + stage detail */}
