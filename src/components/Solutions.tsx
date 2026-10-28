@@ -1,7 +1,7 @@
-import { ArrowRight, Home, Factory, PanelTop, Wrench, HardHat, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Home, Factory, PanelTop, Wrench, HardHat, ShieldCheck, type LucideIcon } from 'lucide-react';
 import { SOLUTIONS } from '@/data';
 
-const ICONS: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+const ICONS: Record<string, LucideIcon> = {
   Home,
   Factory,
   PanelTop,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Phone, MessageCircle, Mail, FileText, X, MapPin, ChevronRight } from 'lucide-react';
+import { Phone, MessageCircle, Mail, FileText, X, MapPin, ChevronRight, Sun } from 'lucide-react';
 import { COMPANY } from '@/data';
 
 type Props = {
@@ -39,6 +39,15 @@ export default function FloatingContact({ onQuote }: Props) {
         </span>
       </button>
 
+      <button
+        onClick={onQuote}
+        className="group fixed right-0 top-[calc(50%+118px)] z-40 hidden -translate-y-1/2 items-center gap-2 rounded-l-2xl border border-gold-400/30 bg-navy-900 px-3 py-5 text-gold-300 shadow-card transition-all duration-300 hover:bg-navy-800 hover:pr-5 sm:flex"
+        aria-label="Open solar consultation form"
+      >
+        <Sun className="h-5 w-5 transition-transform duration-300 group-hover:rotate-45" />
+        <span className="[writing-mode:vertical-rl] rotate-180 text-xs font-extrabold uppercase tracking-[0.16em]">Solar Consultation</span>
+      </button>
+
       {/* Mobile contact pill */}
       <button
         onClick={() => setOpen(true)}
@@ -48,6 +57,15 @@ export default function FloatingContact({ onQuote }: Props) {
         <span className="flex h-2.5 w-2.5 rounded-full bg-navy-900 shadow-[0_0_0_5px_rgba(10,24,60,0.12)]" />
         Reach Us
         <ChevronRight className="h-4 w-4" />
+      </button>
+
+      <button
+        onClick={onQuote}
+        className="group fixed bottom-5 left-5 z-40 flex items-center gap-2 rounded-full border border-navy-900 bg-white px-4 py-3 text-xs font-bold text-navy-900 shadow-card transition-all duration-300 hover:border-gold-400 active:scale-95 sm:hidden"
+        aria-label="Open solar consultation form"
+      >
+        <Sun className="h-4 w-4 text-gold-600" />
+        Solar Consultation
       </button>
 
       {/* Contact popup */}

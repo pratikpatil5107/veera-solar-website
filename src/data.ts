@@ -148,11 +148,11 @@ export type Client = { name: string; detail: string; leadership?: boolean };
 
 export const CLIENTS: Client[] = [
   { name: 'Mr. Irayya B. H.', detail: 'Co-Founder & Managing Director, Veera Solar Energy Pvt. Ltd.', leadership: true },
-  { name: 'Client Two', detail: 'Approved profile to be added' },
-  { name: 'Client Three', detail: 'Approved profile to be added' },
-  { name: 'Client Four', detail: 'Approved profile to be added' },
-  { name: 'Client Five', detail: 'Approved profile to be added' },
-  { name: 'Client Six', detail: 'Approved profile to be added' },
+  { name: 'Client Two', detail: '' },
+  { name: 'Client Three', detail: '' },
+  { name: 'Client Four', detail: '' },
+  { name: 'Client Five', detail: '' },
+  { name: 'Client Six', detail: '' },
 ];
 
 export const WHY_VEERA = [
@@ -172,8 +172,8 @@ export const FOUNDER = {
   designation: 'Co-Founder & Managing Director',
   intro: 'Engineering leadership grounded in execution.',
   bio: [
-    'Veera Solar Energy was founded with a clear belief \u2014 that solar should be engineered, not just installed. With over a decade of hands-on experience across rooftop and ground-mounted projects, our founder has built a team that treats every installation as an engineering project first.',
-    'From site assessment and structural design to procurement, commissioning and long-term support, the focus has always been on quality execution and honest, accountable delivery for every customer.',
+    'Mr. Irayya B. H. holds a degree in Mechanical Engineering and brings over 16 years of experience in the photovoltaic solar energy industry.',
+    'His experience includes more than 500 MW of ground-mounted and rooftop solar design, BESCOM liaisoning, and solar power plant execution. He also has two years of experience in earth-moving equipment design and fabrication.',
   ],
   image: '/images/WhatsApp_Image_2026-09-11_at_1.56.35_AM.jpeg',
   expertise: [

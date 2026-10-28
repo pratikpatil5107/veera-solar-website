@@ -47,7 +47,7 @@ export default function QuoteModal({ open, onClose }: Props) {
       source: 'quote-modal',
     };
 
-    if (!payload.name || !payload.phone || !payload.email || !Number.isFinite(capacity) || capacity <= 0 || capacityMw > 100) {
+    if (!payload.name || !payload.phone || !payload.email || !['kW', 'MW'].includes(capacityUnit) || !Number.isFinite(capacity) || capacity <= 0 || capacityMw > 100) {
       setStatus('error');
       setErrorMsg('Please provide your name, phone, email and a valid capacity up to 100 MW.');
       return;
@@ -84,7 +84,7 @@ export default function QuoteModal({ open, onClose }: Props) {
           <div className="bg-grid-dark pointer-events-none absolute inset-0 opacity-40" />
           <div className="relative flex items-start justify-between">
             <div>
-              <h3 className="font-display text-xl font-bold text-white">Get a Quote</h3>
+              <h3 className="font-display text-xl font-bold text-white">Solar Consultation</h3>
               <p className="mt-0.5 text-sm text-navy-200">Share your project details and our team will respond.</p>
             </div>
             <button

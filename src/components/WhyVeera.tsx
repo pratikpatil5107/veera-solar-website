@@ -1,7 +1,7 @@
-import { Cog, Layers, Award, Users, Handshake, LineChart, ShieldCheck, Factory } from 'lucide-react';
+import { Cog, Layers, Award, Users, Handshake, LineChart, ShieldCheck, Factory, WalletCards, type LucideIcon } from 'lucide-react';
 import { WHY_VEERA } from '@/data';
 
-const ICONS: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+const ICONS: Record<string, LucideIcon> = {
   Cog,
   Layers,
   Award,
@@ -10,6 +10,7 @@ const ICONS: Record<string, React.ComponentType<{ className?: string; strokeWidt
   LineChart,
   ShieldCheck,
   Factory,
+  WalletCards,
 };
 
 export default function WhyVeera() {

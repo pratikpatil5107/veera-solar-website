@@ -1,5 +1,5 @@
-import { useEffect, useState, type ComponentType } from 'react';
-import { ArrowRight, BatteryCharging, Building2, ChevronLeft, ChevronRight, CircleDot, CloudSun, Grid2X2, Play, RefreshCcw, Sun, Zap } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowRight, BatteryCharging, Building2, ChevronLeft, ChevronRight, CircleDot, CloudSun, Grid2X2, RefreshCcw, Sun, Zap, type LucideIcon } from 'lucide-react';
 import { HYBRID_STAGES, ON_GRID_STAGES } from '@/data';
 
 type Stage = { title: string; short: string; detail: string; node: string };
@@ -7,7 +7,7 @@ type JourneyType = 'on-grid' | 'hybrid';
 
 type Props = { type: JourneyType; onQuote: () => void };
 
-const NODE_ICONS: Record<string, ComponentType<{ className?: string; strokeWidth?: number }>> = {
+const NODE_ICONS: Record<string, LucideIcon> = {
   sun: Sun,
   panels: Grid2X2,
   inverter: Zap,

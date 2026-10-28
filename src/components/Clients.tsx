@@ -26,7 +26,7 @@ export default function Clients() {
               <span className="font-display text-sm font-bold tracking-tight text-navy-800 transition-colors duration-300 group-hover:text-navy-900">
                 {client.name}
               </span>
-              <span className="mt-1 text-[0.68rem] leading-tight text-navy-500">{client.detail}</span>
+              {client.detail && <span className="mt-1 text-[0.68rem] leading-tight text-navy-500">{client.detail}</span>}
             </div>
           ))}
         </div>
